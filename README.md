@@ -2,6 +2,7 @@
 
 ES2015 cheatsheet by @richistron
 
+![Work work work](http://33.media.tumblr.com/462faedb3dcb2d8ca956fa6ee7a07df7/tumblr_inline_o3a9gg8WYm1raprkq_500.gif)
 
 ### Let
 
