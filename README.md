@@ -9,13 +9,12 @@ ES2015 cheatsheet by @richistron
 ```javascript
 let foo = true;
 
-console.log(true); // true
-
 if (foo) {
   let bar = true;
   console.log(bar); // true
 }
 
+console.log(true); // true
 console.log(bar); // undefined
 ```
 
@@ -79,7 +78,7 @@ console.log(animalsMap.has(cat)); // false
 ### Object.assign
 
 ```javascript
-let options Object.assign({ foo: true, bar: true }, {foo: false});
+let options = Object.assign({ foo: true, bar: true }, {foo: false});
 
 console.log(options); // { foo: false, bar: true }
 ```
@@ -89,7 +88,8 @@ console.log(options); // { foo: false, bar: true }
 ```javascript
 let animals = ['dog', 'cat', 'bird'];
 let [dog, cat, bird] = animals;
-console.log(dog, cat, bird);
+
+console.log(dog, cat, bird); // dog cat bird
 ```
 
 ### Array deconstruction (first and last value)
@@ -97,16 +97,8 @@ console.log(dog, cat, bird);
 ```javascript
 let animals = ['dog', 'cat', 'bird'];
 let [dog, , bird] = animals;
-console.log(dog, bird);
-```
 
-### Array Loops
-
-```javascript
-let animals = ['dog', 'cat', 'bird'];
-for (let index in animals) {
-  console.log(animals[index]);
-}
+console.log(dog, bird); // dog bird
 ```
 
 ### Array Loops
@@ -114,7 +106,7 @@ for (let index in animals) {
 ```javascript
 let animals = ['dog', 'cat', 'bird'];
 for (let animal of animals) {
-  console.log(animal);
+  console.log(animal); //  dog cat bird
 }
 ```
 
@@ -130,7 +122,8 @@ let animals = [
 let dog = animals.find (animal) => {
   return animal.isDog;
 }
-console.log(dog);
+
+console.log(dog); //   { name: 'rex', isDog: true }
 ```
 
 ### Sets
@@ -140,8 +133,8 @@ let animals = new Set();
 
 animals.add('dog');
 animals.add('cat');
-animals.add('dog');
-console.log(tags.length);
+animals.add('dog'); // it will throw an error
+console.log(animals.length); // 2
 ```
 
 ### WeakSet
@@ -153,8 +146,8 @@ weakAnimals.add({ name: 'dog' });
 let cat = { name: 'cat' };
 weakAnimals.add(cat);
 
-console.log(weakAnimals.has(cat));
-console.log(weakAnimals.delete(cat));
+console.log(weakAnimals.has(cat)); // true
+console.log(weakAnimals.delete(cat)); // true
 ```
 
 ### Classes
@@ -170,7 +163,7 @@ class Animal {
   }
 }
 
-let dog = new Animal();
+let dog = new Animal(); // woof
 ```
 
 ### Classes
@@ -180,10 +173,6 @@ class Human extends Monkey{
   constructor(){
      super();
    }
-
-  bark(){
-    console.log('woof');
-  }
 }
 
 new Human();
